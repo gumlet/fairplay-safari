@@ -44,7 +44,6 @@ async function onEncrypted(event) {
       }
   
       let initData = event.initData;
-      let keyURI = uInt8ArrayToString(new Uint8Array(initData));
       
       let session = video.mediaKeys.createSession();
       session.generateRequest(initDataType, initData);
