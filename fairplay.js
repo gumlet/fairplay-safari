@@ -13,6 +13,9 @@ async function startVideo()
   await loadCertificate();
   let video = document.querySelector('video');
   video.addEventListener('encrypted', onEncrypted);
+  video.addEventListener('error', function(e) {
+    console.error(e);
+  });
   
   // ADAPT: Please put actual HLS stream URL below
   video.src = window.playback_url;
